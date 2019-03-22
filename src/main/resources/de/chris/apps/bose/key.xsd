@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="key">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="keyValues">
+                    <xs:attribute name="state" type="keyState"/>
+                    <xs:attribute name="sender" type="xs:string" fixed="Gabbo"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="keyValues">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PLAY"/>
+            <xs:enumeration value="PAUSE"/>
+            <xs:enumeration value="PLAY_PAUSE"/>
+            <xs:enumeration value="PREV_TRACK"/>
+            <xs:enumeration value="NEXT_TRACK"/>
+            <xs:enumeration value="MUTE"/>
+            <xs:enumeration value="SHUFFLE_ON"/>
+            <xs:enumeration value="SHUFFLE_OFF"/>
+            <xs:enumeration value="REPEAT_ONE"/>
+            <xs:enumeration value="REPEAT_ALL"/>
+            <xs:enumeration value="REPEAT_OFF"/>
+            <xs:enumeration value="ADD_FAVORITE"/>
+            <xs:enumeration value="REMOVE_FAVORITE"/>
+            <xs:enumeration value="THUMBS_UP"/>
+            <xs:enumeration value="THUMBS_DOWN"/>
+            <xs:enumeration value="BOOKMARK"/>
+            <xs:enumeration value="PRESET_1"/>
+            <xs:enumeration value="PRESET_2"/>
+            <xs:enumeration value="PRESET_3"/>
+            <xs:enumeration value="PRESET_4"/>
+            <xs:enumeration value="PRESET_5"/>
+            <xs:enumeration value="PRESET_6"/>
+            <xs:enumeration value="POWER"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="keyState">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="press"/>
+            <xs:enumeration value="release"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

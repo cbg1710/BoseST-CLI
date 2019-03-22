@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ContentItem">
+        <xs:complexType>
+            <xs:attribute name="source" type="xs:string"/>
+            <xs:attribute name="sourceAccount" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
