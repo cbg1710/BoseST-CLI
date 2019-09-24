@@ -22,5 +22,8 @@ target/
 *.iml
 *.iws
 
+# Vscode
+.vscode/
+
 # Properties
 bose.properties
