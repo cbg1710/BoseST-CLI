@@ -18,8 +18,16 @@ public class PostKey extends Post<Key> {
 		preparePost();
 	}
 
-	public static void postKey(KeyValues keyValues) {
-		new PostKey(keyValues, KeyState.PRESS).postCommand();
+	public static void releaseKey(KeyValues keyValues) {
 		new PostKey(keyValues, KeyState.RELEASE).postCommand();
+	}
+
+	public static void pressKey(KeyValues keyValues) {
+		new PostKey(keyValues, KeyState.PRESS).postCommand();
+	}
+
+	public static void postKey(KeyValues keyValues) {
+		pressKey(keyValues);
+		releaseKey(keyValues);
 	}
 }

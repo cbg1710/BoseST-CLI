@@ -52,7 +52,7 @@ public class BoseActions {
         LOG.info("Choosing preset {}", preset);
         String key = "PRESET_" + preset;
         KeyValues keyValues = KeyValues.fromValue(key);
-        PostKey.postKey(keyValues);
+        PostKey.releaseKey(keyValues);
     }
 
     public static void chooseSpotify() {
@@ -77,7 +77,7 @@ public class BoseActions {
             return;
         }
 
-        PostKey.postKey(KeyValues.POWER);
+        switchPower();
 
         LOG.info(String.format("Bose is now %s.", onOff ? "on" : "off"));
     }
@@ -98,11 +98,13 @@ public class BoseActions {
 
         chooseSpotify();
 
-        PostKey.postKey(KeyValues.SHUFFLE_ON);
+        PostKey.pressKey(KeyValues.SHUFFLE_ON);
 
         choosePreset(preset);
 
         postVolume(volume);
+
+        PostKey.pressKey(KeyValues.PLAY);
     }
 
     public void switchPresetWhenTrackFinished(int preset, int volume) {

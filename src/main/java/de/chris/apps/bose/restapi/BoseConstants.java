@@ -15,8 +15,6 @@ public class BoseConstants {
     private final String websocket;
 
     @Autowired
-    private Environment env;
-
     BoseConstants(Environment env) {
         rest = env.getProperty("bose.rest");
         websocket = env.getProperty("bose.websocket");

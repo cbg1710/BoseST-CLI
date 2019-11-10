@@ -17,7 +17,6 @@ class Post<T> {
 
     private HttpClient client;
     private HttpRequest request;
-    private Class<?> clazz;
     private Object o;
 
     Post(String apiCall) {
@@ -66,13 +65,8 @@ class Post<T> {
         }
     }
 
-    private BufferedReader getHttpResponseReader(InputStream httpEntityContent) {
-        return new BufferedReader(new InputStreamReader(httpEntityContent));
-    }
-
     protected void setValue(T value) {
         this.o = value;
-        clazz = value.getClass();
     }
 }
 

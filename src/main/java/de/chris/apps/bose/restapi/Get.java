@@ -35,6 +35,8 @@ public class Get {
     }
 
     static class GetResponseFailure extends RuntimeException {
+        private static final long serialVersionUID = -6215087002082240694L;
+
         GetResponseFailure(String message) {
             super(String.format("Failure during call GET %s", message));
         }
