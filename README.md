@@ -73,7 +73,6 @@ You can start the CLI with following command:
 
 ```bash
 docker run --rm \
-        --ti -p 5432:5432 \
         --name soundtouch \
         -v /logs:/logs \
         soundtouch:latest
