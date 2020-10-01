@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Decrypt Bose Properties
-        run: ./.github/scripts/decrypt_secret.sh
+        run: ./.github/scripts/decrypt_boseproperties.sh
         env:
           BOSE_PROPERTIES_KEY: ${{ secrets.BOSE_PROPERTIES_KEY }}
       - name: Build and push
