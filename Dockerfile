@@ -1,4 +1,4 @@
-FROM amazoncorretto:11-alpine
+FROM bellsoft/liberica-openjdk-debian:11
 ARG BOSE
 COPY ${BOSE} bose.properties 
 ARG JAR_FILE
