@@ -34,6 +34,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Decrypt Bose Properties
+        run: ./.github/scripts/decrypt_secret.sh
+        env:
+          BOSE_PROPERTIES_KEY: ${{ secrets.BOSE_PROPERTIES_KEY }}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
@@ -41,7 +45,7 @@ jobs:
           file: ./Dockerfile
           build-args: |
             JAR_FILE=target/SoundTouchControl-3.2.jar
-            BOSE=${{ secrets.BOSE_PROPERTIES }}
+            BOSE=$HOME/secrets/bose.properties
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/soundtouch:latest
