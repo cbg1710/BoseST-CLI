@@ -38,8 +38,6 @@ jobs:
         run: ./.github/scripts/decrypt_boseproperties.sh
         env:
           BOSE_PROPERTIES_KEY: ${{ secrets.BOSE_PROPERTIES_KEY }}
-      - name: Test printing your secret (Remove this step in production)
-        run: cat bose.properties
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
